@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+.min-h-screen {
+  min-height: 100vh;
+  min-height: 100dvh;
+}

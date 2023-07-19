@@ -1,0 +1,27 @@
+.input-container {
+  @apply flex items-center;
+}
+
+.input-container:has(input[type="checkbox"]:not(:checked)):hover label {
+  @apply text-gray-700;
+}
+
+.input-container:has(input[type="text"]) {
+  @apply flex-col items-start gap-1 cursor-default;
+}
+
+.input-container:has(input[type="checkbox"]) label {
+  @apply flex-1 cursor-pointer;
+}
+
+.input-container label {
+  @apply font-semibold text-sm transition-all;
+}
+
+.input-container:has(input[type="checkbox"]:not(:checked)) label {
+  @apply text-gray-400;
+}
+
+.input-container input[type="text"] {
+  @apply bg-gray-100 outline-none px-3 py-1 border border-transparent focus:border-blue-400 rounded w-full transition-colors;
+}

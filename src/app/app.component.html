@@ -1,37 +1,52 @@
-<h1>Password Generator</h1>
+<div class="absolute inset-2 py-3 m-auto max-w-xs h-fit flex flex-col gap-3">
+  <h1 class="text-xl font-semibold">Password Generator</h1>
 
-<div>
-  <label>Enter Length</label>
-  <input (input)="onChangeLength($event)" />
-</div>
+  <div class="input-container">
+    <label>Enter Length</label>
+    <input type="text" (input)="onChangeLength($event)" />
+  </div>
 
-<div>
-  <label>Use Letters</label>
-  <input (change)="onChangeSettings('includeLetters')()" type="checkbox" />
-</div>
+  <div class="input-container mt-5">
+    <label for="include-letters">Use Letters</label>
+    <input
+      id="include-letters"
+      (change)="onChangeSettings('includeLetters')()"
+      type="checkbox"
+    />
+  </div>
 
-<div>
-  <label>Use Numbers</label>
-  <input (change)="onChangeSettings('includeNumbers')()" type="checkbox" />
-</div>
+  <div class="input-container">
+    <label for="include-numbers">Use Numbers</label>
+    <input
+      id="include-numbers"
+      (change)="onChangeSettings('includeNumbers')()"
+      type="checkbox"
+    />
+  </div>
 
-<div>
-  <label>Use Symbols</label>
-  <input (change)="onChangeSettings('includeSymbols')()" type="checkbox" />
-</div>
+  <div class="input-container mb-5">
+    <label for="include-symbols">Use Symbols</label>
+    <input
+      id="include-symbols"
+      (change)="onChangeSettings('includeSymbols')()"
+      type="checkbox"
+    />
+  </div>
 
-<div>
-  <button
-    [disabled]="
-      !(length && (includeLetters || includeNumbers || includeSymbols))
-    "
-    (click)="onButtonClick()"
-  >
-    Generate
-  </button>
-</div>
+  <div>
+    <button
+      [disabled]="
+        !(length && (includeLetters || includeNumbers || includeSymbols))
+      "
+      (click)="onButtonClick()"
+      class="w-full text-center py-1.5 bg-black text-white rounded font-semibold hover:bg-opacity-70 disabled:bg-gray-100 disabled:text-gray-500 transition-all"
+    >
+      Generate
+    </button>
+  </div>
 
-<div>
-  <label>Your Password</label>
-  <input [value]="password" />
+  <div class="input-container">
+    <label>Your Password</label>
+    <input type="text" [value]="password" />
+  </div>
 </div>
