@@ -45,7 +45,7 @@
     </button>
   </div>
 
-  <div class="input-container">
+  <div class="input-container" *ngIf="password">
     <label>Your Password</label>
     <input type="text" [value]="password" />
   </div>
